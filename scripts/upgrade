@@ -24,6 +24,12 @@ ynh_script_progression "Upgrading source files..."
 
 ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="files config/database.yml config/configuration.yml config/initializers/secret_token.rb"
 
+# Apply custom Turkish translations after upgrading source
+if [ -f "$install_dir/config/locales/tr.yml" ]; then
+    cp "$install_dir/config/locales/tr.yml" "$install_dir/config/locales/tr.yml.bak"
+    cp "../conf/locales/tr.yml" "$install_dir/config/locales/tr.yml"
+fi
+
 mkdir -p "$install_dir/log" "$install_dir/tmp" "$install_dir/public/plugin_assets"
 
 chmod 750 "$install_dir/log" "$install_dir/tmp" "$install_dir/public/plugin_assets"

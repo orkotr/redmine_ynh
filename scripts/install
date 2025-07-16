@@ -17,6 +17,12 @@ ynh_script_progression "Setting up source files..."
 
 ynh_setup_source --dest_dir="$install_dir"
 
+# Apply custom Turkish translations
+if [ -f "$install_dir/config/locales/tr.yml" ]; then
+    cp "$install_dir/config/locales/tr.yml" "$install_dir/config/locales/tr.yml.bak"
+    cp "../conf/locales/tr.yml" "$install_dir/config/locales/tr.yml"
+fi
+
 mkdir -p "$install_dir/files" "$install_dir/log" "$install_dir/tmp" "$install_dir/public/plugin_assets"
 
 #=================================================
