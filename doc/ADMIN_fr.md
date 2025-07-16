@@ -7,8 +7,8 @@ Vous pouvez aller dans le menu Administration et choisir Paramètres pour modifi
 
 ### Traduction turque personnalisée
 
-Lors de l'installation et des mises à jour, le paquet remplace les entrées
-suivantes dans `config/locales/tr.yml` par `Prosedür` :
+Lors de l'installation et des mises à jour, le paquet remplace le fichier de
+langue turque afin que les entrées suivantes valent `Prosedür` :
 
 ```
 field_fixed_version

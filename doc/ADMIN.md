@@ -7,8 +7,8 @@ You can go to Administration menu and choose Settings to modify most of the appl
 
 ### Custom Turkish translation
 
-During installation and upgrades, the package replaces the following entries in
-`config/locales/tr.yml` with `Prosedür`:
+During installation and upgrades, the package replaces the Turkish locale file
+so that the following entries are set to `Prosedür`:
 
 ```
 field_fixed_version

@@ -19,11 +19,8 @@ ynh_setup_source --dest_dir="$install_dir"
 
 # Apply custom Turkish translations
 if [ -f "$install_dir/config/locales/tr.yml" ]; then
-    sed -i \
-        -e 's/^\s*field_fixed_version:.*/  field_fixed_version: "Prosedür"/' \
-        -e 's/^\s*label_attribute_of_fixed_version:.*/  label_attribute_of_fixed_version: "Prosedür"/' \
-        -e 's/^\s*label_issue_fixed_version_updated:.*/  label_issue_fixed_version_updated: "Prosedür"/' \
-        "$install_dir/config/locales/tr.yml"
+    cp "$install_dir/config/locales/tr.yml" "$install_dir/config/locales/tr.yml.bak"
+    cp "../conf/locales/tr.yml" "$install_dir/config/locales/tr.yml"
 fi
 
 mkdir -p "$install_dir/files" "$install_dir/log" "$install_dir/tmp" "$install_dir/public/plugin_assets"
